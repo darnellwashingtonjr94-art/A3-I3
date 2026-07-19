@@ -1,0 +1,18 @@
+# config/hardware_alloc.yaml
+meta_layer_asi:
+  device: "cuda:0"
+  memory_fraction: 0.25
+  allow_cpu_fallback: false
+  compute_precision: "float16"
+
+orchestrator_agi:
+  device: "cuda:1"
+  memory_fraction: 0.40
+  context_window_tokens: 131072
+  quantization: "int8"
+
+substrate_ani:
+  devices: ["cuda:2", "cuda:3"]
+  execution_strategy: "dynamic_pooling"
+  max_concurrent_workers: 64
+  ipc_transport: "posix_shm"
