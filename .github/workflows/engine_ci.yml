@@ -20,10 +20,18 @@ jobs:
         with:
           python-version: '3.10'
           
+      - name: Debug Workspace Structure
+        run: |
+          echo "Current Directory: $(pwd)"
+          ls -R
+          cargo metadata --format-version 1
+          
       - name: Run Engine Tests
         working-directory: .
         run: |
           pip install -r requirements.txt
+          cargo clean
+          cargo build --workspace
           make test
 
       - name: Build and Push Container
