@@ -1,0 +1,18 @@
+# config/system_params.toml
+
+[engine]
+version = "0.1.0"
+mode = "tri_state_concurrent"
+
+[hardware_allocation]
+asi_core_gpu = 0
+agi_orchestrator_gpu = 1
+ani_executors_gpu = [2, 3]
+
+[memory_bus]
+shared_memory_limit_gb = 64
+context_retention_cycles = 1000
+
+[asi_meta_layer]
+optimization_interval_ms = 5000
+recursive_depth_limit = 3
