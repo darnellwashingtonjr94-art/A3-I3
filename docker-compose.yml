@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  a3_i3_core:
+    image: credkellar/a3-i3-engine:latest
+    build:
+      context: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # Mount /dev/shm for massive zero-copy IPC between Python and Rust
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      - ENGINE_MODE=tri_state_concurrent
+      - RUST_LOG=info
