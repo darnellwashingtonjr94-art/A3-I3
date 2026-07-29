@@ -5,13 +5,16 @@ from simulation_sandbox.sandbox import SimulationSandbox
 def initialize_system():
     asi = ASIMetaLayer()
     sandbox = SimulationSandbox()
-    router = AGIOrchestratorRouter(asi_layer=asi, sandbox_layer=sandbox)
+    router = AGIOrchestratorRouter(asi_layer=asi, sandbox=sandbox)
     return router
 
+# 1. Expose the application at the top level so Vercel can find it
+app = initialize_system()
+
 if __name__ == "__main__":
-    system = initialize_system()
+    # 2. You can still test locally using the 'app' variable
     
     # Test Prompt
-    prompt = "Global logistics offline. Satellites failing. Advise immediate stabilization."
-    result = system.route_prompt(prompt)
+    prompt = "Global logistics offline. Satelli..."
+    result = app.route_prompt(prompt)
     print("Final Output Synthesis:", result)
