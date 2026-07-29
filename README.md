@@ -1,5 +1,8 @@
 # A3-I3 Engine 🧠💻
-IMG_0807.png
+
+<p align="center">
+  <img src="IMG_0807.png" alt="Profile Image" width="400"/>
+</p>
 
 ## What Is This About?
 Imagine a computer brain that has three different levels of smarts all working together as a super team! The A3-I3 Engine is a brand-new kind of computer program that mixes three types of Artificial Intelligence (AI) into one big system:
