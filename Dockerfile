@@ -20,3 +20,7 @@ RUN make build
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "core_agi/main.py"]
+
+# Example snippet inside your Dockerfile
+RUN apt-get update && apt-get install -y cargo rustc
+RUN cargo build --release --manifest-path /opt/a3_i3_engine/interop/Cargo.toml
