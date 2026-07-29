@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/**/*.py", "use": "@vercel/python" },
-    { "src": "public/**/*", "use": "@vercel/static" }
-  ],
   "functions": {
     "api/proxy.py": {
       "maxDuration": 300
