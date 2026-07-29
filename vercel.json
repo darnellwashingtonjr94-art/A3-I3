@@ -1,15 +1,11 @@
 {
   "version": 2,
   "functions": {
-    "api/proxy.py": {
+    "api/index.py": {
       "maxDuration": 300
     }
   },
   "routes": [
-    { 
-      "src": "/compute/(.*)", 
-      "dest": "/api/proxy/$1" 
-    },
     { 
       "src": "/api/(.*)", 
       "dest": "/api/$1" 
