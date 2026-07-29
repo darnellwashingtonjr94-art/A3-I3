@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: a3-i3-engine
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: a3-i3-engine
+  template:
+    metadata:
+      labels:
+        app: a3-i3-engine
+    spec:
+      containers:
+      - name: a3-i3-container
+        image: <YOUR_AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/a3-i3-repo:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        env:
+        - name: REDIS_HOST
+          value: "redis-cluster.default.svc.cluster.local"
