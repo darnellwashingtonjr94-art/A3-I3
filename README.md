@@ -1,7 +1,7 @@
 # A3-I3 Engine 🧠💻
 
 <p align="center">
-  <img src="IMG_0807.png" alt="Profile Image" width="400"/>
+  <img src="IMG_0826.jpeg" alt="Profile Image" width="400"/>
 </p>
 
 <div align="center">
