@@ -4,15 +4,19 @@
     { "src": "api/**/*.py", "use": "@vercel/python" },
     { "src": "public/**/*", "use": "@vercel/static" }
   ],
-  "rewrites": [
-    {
-      "source": "/compute/:path*",
-      "destination": "https://your-external-gpu-node.runpod.io/:path*"
-    }
-  ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/public/$1" }
+    { 
+      "src": "/compute/(.*)", 
+      "dest": "/api/proxy/$1" 
+    },
+    { 
+      "src": "/api/(.*)", 
+      "dest": "/api/$1" 
+    },
+    { 
+      "src": "/(.*)", 
+      "dest": "/public/$1" 
+    }
   ],
   "headers": [
     {
@@ -33,19 +37,6 @@
         {
           "key": "Content-Security-Policy",
           "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
-        }
-      ]
-    },
-    {
-      "source": "/compute/static-model/:path*",
-      "headers": [
-        {
-          "key": "CDN-Cache-Control",
-          "value": "public, max-age=60, stale-while-revalidate=3600"
-        },
-        {
-          "key": "Vercel-Cache-Tag",
-          "value": "compute-api"
         }
       ]
     }
