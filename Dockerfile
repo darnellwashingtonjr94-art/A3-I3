@@ -2,7 +2,7 @@
 FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 
 # Install Rust toolchain and Python environment
-RUN apt-get update && apt-get install -y curl python3 python3-pip make build-essential && \
+RUN apt-get update && apt-get install -y curl python3 python3-pip make && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ENV PATH="/root/.cargo/bin:${PATH}"
