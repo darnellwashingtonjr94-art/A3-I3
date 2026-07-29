@@ -60,8 +60,6 @@
 
 </div>
 
-# A3-I3
-
 ## What Is This About?
 A3-I3 is an advanced, multi-layered artificial intelligence and autonomous systems architecture designed to orchestrate complex neural networks, hardware acceleration, and cross-platform memory management. It integrates core AGI, ANI, and ASI modules into a unified, high-performance ecosystem.
 
