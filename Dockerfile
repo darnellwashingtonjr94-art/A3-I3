@@ -13,14 +13,10 @@ COPY . .
 # Set Python path to ensure internal packages/modules are discoverable
 ENV PYTHONPATH=/opt/a3_i3_engine
 
-# Compile the ASI Rust core and FFI bindings
-RUN make build
+# Compile the ASI Rust core and FFI bindings via the workspace member
+RUN cargo build --release -p interop_bridge
 
 # Install AGI Orchestrator dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "core_agi/main.py"]
-
-# Example snippet inside your Dockerfile
-RUN apt-get update && apt-get install -y cargo rustc
-RUN cargo build --release --manifest-path /opt/a3_i3_engine/interop/Cargo.toml
