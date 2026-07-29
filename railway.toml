@@ -1,3 +1,3 @@
 [build]
-builder = "nixpacks"
-buildCommand = "cargo build --release --manifest-path interop/Cargo.toml" # Adjust path to where your Cargo.toml is located
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
