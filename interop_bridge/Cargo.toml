@@ -5,3 +5,4 @@ edition = "2021"
 
 [lib]
 crate-type = ["cdylib"] # Necessary for Python ctypes binding
+path = "ffi_bindings/lib.rs"
