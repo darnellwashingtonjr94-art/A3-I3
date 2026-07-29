@@ -13,12 +13,12 @@ COPY . .
 # Set Python path to ensure internal packages/modules are discoverable
 ENV PYTHONPATH=/opt/a3_i3_engine
 
-# Compile the ASI Rust core and FFI bindings via the workspace member
-RUN cargo build --release -p interop_bridge
+# Compile the Rust FFI interop bridge and explicitly ensure the output directory exists
+RUN cargo build --release -p interop_bridge && \
+    mkdir -p interop_bridge/target/release && \
+    cp target/release/libinterop.so interop_bridge/target/release/libinterop.so
 
 # Install AGI Orchestrator dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "core_agi/main.py"]
-
-
