@@ -20,3 +20,5 @@ RUN cargo build --release -p interop_bridge
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "core_agi/main.py"]
+
+
