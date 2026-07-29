@@ -1,4 +1,4 @@
-# A3-I3 Engine 🧠💻
+# A3-I3 🧠💻
 
 <p align="center">
   <img src="IMG_0826.jpeg" alt="Profile Image" width="400"/>
