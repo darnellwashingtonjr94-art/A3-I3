@@ -13,7 +13,7 @@ COPY . .
 # Set Python path to ensure internal packages/modules are discoverable
 ENV PYTHONPATH=/opt/a3_i3_engine
 
-# Compile the Rust FFI interop bridge and explicitly ensure the output directory exists
+# Compile the workspace and place the shared object file where Python expects it
 RUN cargo build --release -p interop_bridge && \
     mkdir -p interop_bridge/target/release && \
     cp target/release/libinterop.so interop_bridge/target/release/libinterop.so
